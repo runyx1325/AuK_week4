@@ -19,31 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudent.h" />
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentlist.h" />
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentmap.h" />
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudenttree.h" />
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwtest.h" />
+    <ClInclude Include="dhbwstudent.h" />
+    <ClInclude Include="dhbwstudentlist.h" />
+    <ClInclude Include="dhbwstudentmap.h" />
+    <ClInclude Include="dhbwstudenttree.h" />
+    <ClInclude Include="dhbwtest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\datastructures.c">
+    <ClCompile Include="datastructures.c" />
+    <ClCompile Include="dhbwstudent.c">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudent.c">
+    <ClCompile Include="dhbwstudentlist.c">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentlist.c">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentmap.c">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudenttree.c">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwtest.c">
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
+    <ClCompile Include="dhbwstudentmap.c" />
+    <ClCompile Include="dhbwstudenttree.c" />
+    <ClCompile Include="dhbwtest.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

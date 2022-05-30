@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentlist.h">
+    <ClInclude Include="dhbwstudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwtest.h">
+    <ClInclude Include="dhbwstudentlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudenttree.h">
+    <ClInclude Include="dhbwstudentmap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentmap.h">
+    <ClInclude Include="dhbwstudenttree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\Woche456\src\dhbwstudent.h">
+    <ClInclude Include="dhbwtest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\datastructures.c">
+    <ClCompile Include="dhbwstudentmap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudent.c">
+    <ClCompile Include="dhbwstudenttree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentlist.c">
+    <ClCompile Include="dhbwtest.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudentmap.c">
+    <ClCompile Include="datastructures.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwstudenttree.c">
+    <ClCompile Include="dhbwstudent.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\Woche456\src\dhbwtest.c">
+    <ClCompile Include="dhbwstudentlist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
