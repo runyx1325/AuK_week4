@@ -189,7 +189,11 @@ StudentLP StudentLExtractStudent(StudentLP *anchor_adr, Student_p student) {
 
 		if (strcmp(temp->lastname, student->lastname) == 0 && temp->matrnr == student->matrnr) {
 			
-			//if(pre == NULL)
+			if (pre == NULL) pre->next = akt->next;
+			else if (akt->next) {
+				akt = akt->next;
+			}
+			else *anchor_adr = NULL;
 
 			return akt;
 		}
@@ -197,9 +201,7 @@ StudentLP StudentLExtractStudent(StudentLP *anchor_adr, Student_p student) {
 			if (akt->next == NULL) return false;
 			pre = akt;
 			akt = akt->next;
-		}
-
-		
+		}		
 	}
 	return false;
 }
