@@ -173,37 +173,44 @@ bool StudentLContainsStudent(StudentLP *anchor_adr, Student_p student) {
 
 StudentLP StudentLExtractStudent(StudentLP *anchor_adr, Student_p student) {
 	StudentLP akt = *anchor_adr, pre = NULL;
+
 	//empty list check
 	if (akt == NULL) return NULL;
 
-	//first element
-	if (strcmp(akt->student->lastname, student->lastname) == 0 && akt->student->matrnr == student->matrnr) {
-		*anchor_adr = akt->next;
-		return akt;
-	}
-	pre = akt;
-	akt = akt->next;
-
 	while (akt != NULL) {
-		Student_p temp = akt->student;
 
-		if (strcmp(temp->lastname, student->lastname) == 0 && temp->matrnr == student->matrnr) {
-			
-			if (pre == NULL) pre->next = akt->next;
-			else if (akt->next) {
-				akt = akt->next;
+		//Find the student
+		if (strcmp(akt->student->lastname, student->lastname) == 0 && akt->student->matrnr == student->matrnr) {
+			StudentLP temp = akt;
+
+			if (pre != NULL)
+			{
+				pre->next = akt->next;
 			}
-			else *anchor_adr = NULL;
+			else if (akt->next)
+			{
+				akt = akt->next;
+				*anchor_adr = akt;
+			}
+			else
+			{
+				*anchor_adr = NULL;
+			}
+			return temp;
+		}
+	
 
-			return akt;
+		if (akt->next == NULL)
+		{
+			//end of list
+			return NULL;
 		}
 		else {
-			if (akt->next == NULL) return false;
+			//next element
 			pre = akt;
 			akt = akt->next;
-		}		
+		}
 	}
-	return false;
 }
 
 StudentLP StudentLFindStudent(StudentLP *anchor_adr, Student_p student) {
@@ -246,5 +253,85 @@ StudentLP StudentLFindByName(StudentLP *anchor_adr, char *lastname) {
 }
 
 void StudentLInsertSorted(StudentLP *anchor_adr, Student_p newStudent) {
+	StudentLP akt = *anchor_adr, pre = NULL, newStudentLP = NULL;
 
+	if (newStudent->matrnr == 0) {
+		return;
+	}
+
+	if (*anchor_adr == NULL) {
+		StudentLInsertFirst(*anchor_adr, newStudent);
+		return;
+	}
+
+	while (akt)
+	{
+		if (akt->next == NULL) // If current is tail
+		{
+			if (newStudent->matrnr < akt->student->matrnr)
+			{
+				newStudentLP = StudentLPAlloc(newStudent);
+
+				if (pre == NULL)
+				{
+					// Set newStudent as new head of list
+					StudentLP oldHead = *anchor_adr;
+					*anchor_adr = newStudentLP;
+					newStudentLP->next = oldHead;
+				}
+				else
+				{
+					// place in between
+					pre->next = newStudentLP;
+				}
+			}
+			else
+			{
+				if (StudentLContainsStudent(anchor_adr, newStudent))
+				{
+					//avoid redundancy
+					return;
+				}
+				else
+				{
+					StudentLInsertLast(anchor_adr, newStudent);
+				}
+			}
+
+			return;
+		}
+		else // not tail
+		{
+			newStudentLP = StudentLPAlloc(newStudent);
+
+			if (akt->student->matrnr < newStudent->matrnr && akt->next->student->matrnr > newStudent->matrnr)
+			{
+				newStudentLP->next = akt->next;
+				akt->next = newStudentLP;
+				return;
+			}
+
+			if (newStudent->matrnr < akt->student->matrnr)
+			{
+				if (pre == NULL) // akt is head
+				{
+					StudentLInsertFirst(anchor_adr, newStudent);
+				}
+				else
+				{
+					pre->next = newStudentLP;
+					newStudentLP->next = akt;
+				}
+
+				return;
+			}
+			else
+			{
+				// set before and get next
+				pre = akt;
+				akt = akt->next;
+			}
+		}
+	}
 }
+
