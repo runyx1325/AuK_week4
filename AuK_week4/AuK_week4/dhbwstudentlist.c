@@ -260,7 +260,7 @@ void StudentLInsertSorted(StudentLP *anchor_adr, Student_p newStudent) {
 	}
 
 	if (*anchor_adr == NULL) {
-		StudentLInsertFirst(*anchor_adr, newStudent);
+		StudentLInsertFirst(anchor_adr, newStudent);
 		return;
 	}
 
